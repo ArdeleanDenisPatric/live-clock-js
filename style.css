@@ -1,0 +1,138 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+html,
+body {
+    display         : grid;
+    height          : 100%;
+    place-items     : center;
+    overflow-y      : hidden;
+    overflow-x      : hidden;
+    background-image: linear-gradient(#333, #669);
+}
+
+.ball {
+    position     : absolute;
+    border-radius: 100%;
+    opacity      : 0.7;
+}
+
+.display {
+    color: hsla(0, 0%, 0%, .9);
+    font: normal 190px Varela Round, sans-serif;
+    height: 190px;
+    left: 0;
+    letter-spacing: 5px;
+    margin: -80px 0 0 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    width: 100%;
+    animation: move linear 2000ms infinite;  
+  }
+  
+  @keyframes move {
+    0% {
+      text-shadow:
+        4px -4px 0 hsla(0, 100%, 50%, 1), 
+        3px -3px 0 hsla(0, 100%, 50%, 1), 
+        2px -2px 0 hsla(0, 100%, 50%, 1), 
+        1px -1px 0 hsla(0, 100%, 50%, 1),
+        -4px 4px 0 hsla(180, 100%, 50%, 1), 
+        -3px 3px 0 hsla(180, 100%, 50%, 1), 
+        -2px 2px 0 hsla(180, 100%, 50%, 1), 
+        -1px 1px 0 hsla(180, 100%, 50%, 1)
+      ;
+    }
+    25% {    
+      text-shadow:      
+        -4px -4px 0 hsla(180, 100%, 50%, 1), 
+        -3px -3px 0 hsla(180, 100%, 50%, 1), 
+        -2px -2px 0 hsla(180, 100%, 50%, 1), 
+        -1px -1px 0 hsla(180, 100%, 50%, 1),
+        4px 4px 0 hsla(0, 100%, 50%, 1), 
+        3px 3px 0 hsla(0, 100%, 50%, 1), 
+        2px 2px 0 hsla(0, 100%, 50%, 1), 
+        1px 1px 0 hsla(0, 100%, 50%, 1)      
+      ;
+    }
+    50% {
+      text-shadow:
+        -4px 4px 0 hsla(0, 100%, 50%, 1), 
+        -3px 3px 0 hsla(0, 100%, 50%, 1), 
+        -2px 2px 0 hsla(0, 100%, 50%, 1), 
+        -1px 1px 0 hsla(0, 100%, 50%, 1),
+        4px -4px 0 hsla(180, 100%, 50%, 1), 
+        3px -3px 0 hsla(180, 100%, 50%, 1), 
+        2px -2px 0 hsla(180, 100%, 50%, 1), 
+        1px -1px 0 hsla(180, 100%, 50%, 1)
+      ;
+    }
+    75% {
+      text-shadow:
+        4px 4px 0 hsla(180, 100%, 50%, 1), 
+        3px 3px 0 hsla(180, 100%, 50%, 1), 
+        2px 2px 0 hsla(180, 100%, 50%, 1), 
+        1px 1px 0 hsla(180, 100%, 50%, 1),
+        -4px -4px 0 hsla(0, 100%, 50%, 1), 
+        -3px -3px 0 hsla(0, 100%, 50%, 1), 
+        -2px -2px 0 hsla(0, 100%, 50%, 1), 
+        -1px -1px 0 hsla(0, 100%, 50%, 1)      
+      ;
+    }
+    100% {
+      text-shadow:
+        4px -4px 0 hsla(0, 100%, 50%, 1), 
+        3px -3px 0 hsla(0, 100%, 50%, 1), 
+        2px -2px 0 hsla(0, 100%, 50%, 1), 
+        1px -1px 0 hsla(0, 100%, 50%, 1),
+        -4px 4px 0 hsla(180, 100%, 50%, 1), 
+        -3px 3px 0 hsla(180, 100%, 50%, 1), 
+        -2px 2px 0 hsla(180, 100%, 50%, 1), 
+        -1px 1px 0 hsla(180, 100%, 50%, 1)
+      ;
+    }  
+  }
+
+.light {
+    animation       : top-right 5s ease-in-out alternate infinite;
+    border-bottom   : none;
+    border-left     : solid 20vh transparent;
+    border-right    : solid 20vh transparent;
+    border-top      : solid 200vh rgba(255, 255, 255, .5);
+    bottom          : 0;
+    height          : 0;
+    left            : 0;
+    position        : absolute;
+    transform-origin: bottom;
+    width           : 0;
+}
+
+.light+.light {
+    animation: top-left 4s ease-in-out alternate infinite;
+    left     : auto;
+    right    : 0;
+}
+
+@keyframes top-right {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(70deg);
+    }
+}
+
+@keyframes top-left {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-70deg);
+    }
+}
